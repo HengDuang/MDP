@@ -15,7 +15,7 @@ void ObstaclesAdvoidance(double Distance, double ForwardL , double ForwardR)
     case Step1: //go straight till it hit obstacle
       TargetRPM = 100;
       MoveRobotForward();
-      if (ForwardL <= 10 || ForwardR <= 10)
+      if (ForwardL <= 10 || ForwardR <= 10 || Distance <=10)
       {
         RobotStop();
         test = TotalDistanceTravelled;
@@ -251,22 +251,22 @@ void ObstaclesAdvoidance(double Distance, double ForwardL , double ForwardR)
         Step2Check = false;
         Step3Check = false;
         RobotStop();
-        State = Step11;
+        State = Step10;
         TotalDistanceTravelled =0;
         test1 = 350 - test;
         delay(1000);
       }
       break;
-//
-//      case Step10:
-//      MoveRobotForward();
-//      if(TotalDistanceTravelled == test1)
-//      {
-//        RobotStop();
-//        State = Step11;
-//        delay(1000);
-//      }
-//      break;
+
+      case Step10:
+      MoveRobotForward();
+      if(TotalDistanceTravelled == test1)
+      {
+        RobotStop();
+        State = Step11;
+        delay(1000);
+      }
+      break;
       case Step11:
       RobotStop();
 //      

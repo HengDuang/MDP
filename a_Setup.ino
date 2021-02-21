@@ -39,6 +39,8 @@ void setup()
   LeftMotorCounter =0;
   RightMotorCounter=0;
   TotalDistanceTravelled =0;
+  test =0;
+  test1 =0;
   Serial.begin(115200);
   enableInterrupt(RightEncoder, RightMotorCount, RISING); //Set Rising Edge as interrupt
   enableInterrupt(LeftEncoder, LeftMotorCount, RISING); //Set Rising Edge as interrupt
@@ -49,10 +51,16 @@ void loop()
 {
   double ForwardL = CalibrateFrontLeftShortSensor();
   double ForwardR = CalibrateFrontRightShortSensor();
-  double LeftLongSensor = CalibrateLeftLongSensor();
+  double LeftLongSensor = CalibrateLeftLongSensor(); //back side sensor
   double RightLongSensor = CalibrateRightLongSensor();
   double LeftShortSensor = CalibrateLeftShortSensor();
   double Distance = (ForwardL + ForwardR) / 2;
-  ObstaclesAdvoidance(Distance,ForwardL , ForwardR);
-  Serial.println(LeftShortSensor);
+  Serial.print(RightLongSensor);
+  Serial.print("  ");
+  Serial.print(ForwardL);
+  Serial.print("  ");
+  Serial.println(ForwardR);
+  
+//   ObstaclesAdvoidance(Distance,ForwardL , ForwardR); // 90 degreee obstacles checklist
+//   ObstaclesAdvoidance1(Distance,ForwardL, ForwardR); // 45 degreee obstacles checklist
 }

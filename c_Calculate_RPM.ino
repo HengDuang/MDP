@@ -18,7 +18,8 @@ void LeftMotorCount()
   else if (LeftMotorCounter == 11) {
     DistanceCounter++;
     TotalDistanceTravelled++;
-    if(DistanceCounter == 55)
+//    if(DistanceCounter == 54) //for 90 degree checklist
+    if(DistanceCounter == 82)
     {
       DistanceStop = true;
       DistanceCounter = 0;
@@ -38,12 +39,15 @@ void RightMotorCount()
   else if (RightMotorCounter == 11) {
     TurningCounter++;
     TurningCounterL++;
-    if (TurningCounter == 36) // [36[+1},72[+2],108[+4],144[+4],180[+6],216[+6],252[+6],288[+7],324[+9],360[+10],396[+10],432[+11]// [90,180,270,360,450,540,600,720,810,900,990,1080]
+//    if (TurningCounter == 34) // [36[+1},72[+2],108[+4],144[+4],180[+6],216[+6],252[+6],288[+7],324[+9],360[+10],396[+10],432[+11]// [90,180,270,360,450,540,600,720,810,900,990,1080]
+    if (TurningCounter == 18) // for 45 degreee
     {
       Angle = true;
       TurningCounter = 0;
     }
-    if (TurningCounterL == 34)
+    if(TurningCounterL == 35) //45 degree
+//  
+//if (TurningCounterL == 32) 
     {
       AngleL = true;
       TurningCounterL = 0;

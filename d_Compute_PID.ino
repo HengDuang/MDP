@@ -11,16 +11,16 @@ double AllLeftMotorError;
 double AllRightMotorError;
 
 
-//Left //red line
 double Kp = 11.5; //10 increase to reduce spike at the start
-double Ki = 0.61; //0.9 increase to pump up to able to reach desired speed
+double Ki = 0.52; //0.9 increase to pump up to able to reach desired speed
 double Kd = 0.35; //increase to improve stablity and prevent overshoot from the target
 
 
 //Right //blue line
 double Kpr = 10.5;
-double Kir = 0.6;
+double Kir = 0.58;
 double Kdr = 0.35;
+
 
 
 void ComputePID()

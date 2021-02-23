@@ -187,6 +187,7 @@ void loop()
         TargetRPM = 120;
         MoveRobotAntiClockWise();
         if (AngleL == true)
+        Serial.println("HI");
         {
           RightMotorCounter = 0;
           LeftMotorCounter = 0;
